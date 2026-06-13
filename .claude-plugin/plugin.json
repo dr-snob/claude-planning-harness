@@ -1,0 +1,8 @@
+{
+  "name": "planning-harness",
+  "version": "0.1.0",
+  "description": "Persistent .planning/ workflow + change-scope discipline + session-continuity and efficiency hooks for Claude Code. Resume handoffs, plan-checkbox tracking, completion guards, and drift control.",
+  "author": { "name": "Gerald" },
+  "license": "MIT",
+  "keywords": ["planning","workflow","hooks","session-handoff","scope-discipline","task-management"]
+}

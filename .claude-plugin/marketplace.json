@@ -1,0 +1,23 @@
+{
+  "name": "planning-harness",
+  "owner": {
+    "name": "Gerald"
+  },
+  "metadata": {
+    "description": "Single-plugin marketplace for the planning-harness Claude Code plugin.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "planning-harness",
+      "description": "Persistent .planning/ workflow + change-scope discipline + session-continuity and efficiency hooks for Claude Code. Resume handoffs, plan-checkbox tracking, completion guards, and drift control.",
+      "author": {
+        "name": "Gerald"
+      },
+      "license": "MIT",
+      "category": "workflow",
+      "source": "./",
+      "strict": false
+    }
+  ]
+}

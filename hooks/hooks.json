@@ -1,0 +1,138 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/auto-load-resume-notes.sh\""
+          }
+        ],
+        "description": "Surface the most-recent .planning resume handoff so a new session inherits context."
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/completion-claim-checkbox-guard.sh\""
+          }
+        ],
+        "description": "Block a 'complete' claim while plan **N.M** checkboxes are still open."
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/phase-transition-checkbox-reminder.sh\""
+          }
+        ],
+        "description": "On 'next phase/move on' vocab, remind to check the finished phase's boxes."
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/intellectual-honesty-reminder.sh\""
+          }
+        ],
+        "description": "On debugging/proposal vocab, remind to verify claims and evaluate before agreeing."
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/tool-acquisition-reminder.sh\""
+          }
+        ],
+        "description": "On unsupported-format vocab, remind to probe/install a tool before claiming inability."
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/secrets-discipline-reminder.sh\""
+          }
+        ],
+        "description": "On secret/credential vocab, remind never to echo secret values into chat."
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/end-session-handoff.sh\""
+          }
+        ],
+        "description": "On wind-down/handoff vocabulary, instruct the agent to write a full .planning/resume-next-session.md before replying"
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/plan-complete-flip-guard.sh\""
+          }
+        ],
+        "description": "Block flipping the final **99.0** box unless PLAN_COMPLETE_AUTHORIZED is set."
+      },
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/change-scope-pre-edit-gate.sh\""
+          }
+        ],
+        "description": "Block edits to files outside the active .planning scope manifest."
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/change-scope-discipline-reminder.sh\""
+          }
+        ],
+        "description": "On git commit, inject the pre-commit hunk-by-hunk diff-audit reminder."
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/git-mv-unstaged-guard.sh\""
+          }
+        ],
+        "description": "Block a git commit that would silently drop unstaged edits to a git-mv'd file."
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/plan-completion-detector.sh\""
+          }
+        ],
+        "description": "Detect a **99.0** flip on plan.md/scope.md and prompt archival."
+      },
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/plan-folder-discipline-reminder.sh\""
+          }
+        ],
+        "description": "On .planning file writes, remind of folder completeness + 2-tier resume routing."
+      }
+    ]
+  }
+}
