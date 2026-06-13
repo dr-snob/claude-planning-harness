@@ -2,7 +2,7 @@
 # Portrait, pastel, icon-driven flow infographic for planning-harness.
 import html
 
-W = 1080
+W = 1200
 PAD = 60
 SLATE   = "#3A3F57"
 MUTE    = "#727aa0"
