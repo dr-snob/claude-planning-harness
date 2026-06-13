@@ -1,7 +1,7 @@
 # planning-harness
 
 <p align="center">
-  <img src="docs/architecture.svg" alt="planning-harness architecture — how the 13 hooks wire into the Claude Code session lifecycle and the .planning/ workflow" width="100%">
+  <img src="docs/architecture.svg" alt="planning-harness architecture — how the 13 hooks wire into the Claude Code session lifecycle and the .planning/ workflow" width="760">
 </p>
 
 > **Follow the arrows:** each story starts from *what you type or do*, flows through the
