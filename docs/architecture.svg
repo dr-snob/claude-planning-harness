@@ -1,0 +1,169 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="1390" viewBox="0 0 1280 1390" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif">
+<rect width="1280" height="1390" fill="#FBF9F4"/>
+<rect x="0" y="0" width="1280" height="6" fill="#2A2521"/>
+<text x="40" y="62" font-size="34" font-weight="700" fill="#2A2521">planning-harness</text>
+<text x="40" y="92" font-size="16" fill="#7A7164">A Claude Code plugin — persistent <tspan font-family="ui-monospace, Menlo, monospace" fill="#2A2521">.planning/</tspan> workflow, change-scope discipline &amp; session continuity, wired into the session lifecycle.</text>
+<rect x="816" y="44" width="96" height="26" rx="13" fill="#4F7A6A"/>
+<text x="864.0" y="61" font-size="13" font-weight="600" fill="#fff" text-anchor="middle">Planning</text>
+<rect x="926" y="44" width="132" height="26" rx="13" fill="#B26A4A"/>
+<text x="992.0" y="61" font-size="13" font-weight="600" fill="#fff" text-anchor="middle">Change-scope</text>
+<rect x="1072" y="44" width="168" height="26" rx="13" fill="#A8862E"/>
+<text x="1156.0" y="61" font-size="13" font-weight="600" fill="#fff" text-anchor="middle">Efficiency &amp; quality</text>
+<text x="40" y="132" font-size="12.5" letter-spacing="2" font-weight="700" fill="#7A7164">THE SESSION LIFECYCLE  —  WHAT FIRES, WHEN</text>
+<rect x="40" y="150" width="1200" height="30" rx="7" fill="#2A2521"/>
+<circle cx="58" cy="165.0" r="4.5" fill="#FBF9F4"/>
+<text x="74" y="170" font-size="14.5" font-weight="700" fill="#FBF9F4" font-family="ui-monospace, Menlo, monospace">SessionStart</text>
+<text x="1226" y="170" font-size="12.5" fill="#C9BBA3" text-anchor="end">session begins</text>
+<rect x="40" y="190" width="232" height="104" rx="9" fill="#FFFFFF" stroke="#E7E0D4" stroke-width="1"/>
+<rect x="40" y="190" width="5" height="104" rx="2.5" fill="#4F7A6A"/>
+<rect x="202" y="202" width="58" height="18" rx="9" fill="#EFE9DC"/>
+<text x="231" y="215" font-size="10" font-weight="600" fill="#7A7164" text-anchor="middle">advisory</text>
+<text x="56" y="220" font-size="12.5" font-weight="700" fill="#2A2521" font-family="ui-monospace, Menlo, monospace">auto-load-resume-notes</text>
+<text x="56" y="240" font-size="11.5" fill="#7A7164">Loads the project&#x27;s .planning</text>
+<text x="56" y="256" font-size="11.5" fill="#7A7164">resume note so the new session</text>
+<text x="56" y="272" font-size="11.5" fill="#7A7164">inherits full context.</text>
+<rect x="40" y="320" width="1200" height="30" rx="7" fill="#2A2521"/>
+<circle cx="58" cy="335.0" r="4.5" fill="#FBF9F4"/>
+<text x="74" y="340" font-size="14.5" font-weight="700" fill="#FBF9F4" font-family="ui-monospace, Menlo, monospace">UserPromptSubmit</text>
+<text x="1226" y="340" font-size="12.5" fill="#C9BBA3" text-anchor="end">you send a message</text>
+<rect x="40" y="360" width="232" height="104" rx="9" fill="#FFFFFF" stroke="#E7E0D4" stroke-width="1"/>
+<rect x="40" y="360" width="5" height="104" rx="2.5" fill="#4F7A6A"/>
+<rect x="202" y="372" width="58" height="18" rx="9" fill="#EFE9DC"/>
+<text x="231" y="385" font-size="10" font-weight="600" fill="#7A7164" text-anchor="middle">advisory</text>
+<text x="56" y="390" font-size="12.5" font-weight="700" fill="#2A2521" font-family="ui-monospace, Menlo, monospace">end-session-handoff</text>
+<text x="56" y="410" font-size="11.5" fill="#7A7164">On “wrap up / end session”,</text>
+<text x="56" y="426" font-size="11.5" fill="#7A7164">writes a full handoff doc before</text>
+<text x="56" y="442" font-size="11.5" fill="#7A7164">replying.</text>
+<rect x="286" y="360" width="232" height="104" rx="9" fill="#FFFFFF" stroke="#E7E0D4" stroke-width="1"/>
+<rect x="286" y="360" width="5" height="104" rx="2.5" fill="#4F7A6A"/>
+<rect x="448" y="372" width="58" height="18" rx="9" fill="#EFE9DC"/>
+<text x="477" y="385" font-size="10" font-weight="600" fill="#7A7164" text-anchor="middle">advisory</text>
+<text x="302" y="390" font-size="12.5" font-weight="700" fill="#2A2521" font-family="ui-monospace, Menlo, monospace">phase-transition-reminder</text>
+<text x="302" y="410" font-size="11.5" fill="#7A7164">On “next phase”, reminds you to</text>
+<text x="302" y="426" font-size="11.5" fill="#7A7164">tick the finished phase&#x27;s boxes.</text>
+<rect x="532" y="360" width="232" height="104" rx="9" fill="#FFFFFF" stroke="#E7E0D4" stroke-width="1"/>
+<rect x="532" y="360" width="5" height="104" rx="2.5" fill="#A8862E"/>
+<rect x="694" y="372" width="58" height="18" rx="9" fill="#EFE9DC"/>
+<text x="723" y="385" font-size="10" font-weight="600" fill="#7A7164" text-anchor="middle">advisory</text>
+<text x="548" y="390" font-size="12.5" font-weight="700" fill="#2A2521" font-family="ui-monospace, Menlo, monospace">intellectual-honesty</text>
+<text x="548" y="410" font-size="11.5" fill="#7A7164">Verify external claims, push back</text>
+<text x="548" y="426" font-size="11.5" fill="#7A7164">on weak proposals, trace root</text>
+<text x="548" y="442" font-size="11.5" fill="#7A7164">cause before band-aids.</text>
+<rect x="778" y="360" width="232" height="104" rx="9" fill="#FFFFFF" stroke="#E7E0D4" stroke-width="1"/>
+<rect x="778" y="360" width="5" height="104" rx="2.5" fill="#A8862E"/>
+<rect x="940" y="372" width="58" height="18" rx="9" fill="#EFE9DC"/>
+<text x="969" y="385" font-size="10" font-weight="600" fill="#7A7164" text-anchor="middle">advisory</text>
+<text x="794" y="390" font-size="12.5" font-weight="700" fill="#2A2521" font-family="ui-monospace, Menlo, monospace">tool-acquisition</text>
+<text x="794" y="410" font-size="11.5" fill="#7A7164">Never “I can&#x27;t” — probe, install</text>
+<text x="794" y="426" font-size="11.5" fill="#7A7164">the tool, then do it.</text>
+<rect x="1024" y="360" width="232" height="104" rx="9" fill="#FFFFFF" stroke="#E7E0D4" stroke-width="1"/>
+<rect x="1024" y="360" width="5" height="104" rx="2.5" fill="#A8862E"/>
+<rect x="1186" y="372" width="58" height="18" rx="9" fill="#EFE9DC"/>
+<text x="1215" y="385" font-size="10" font-weight="600" fill="#7A7164" text-anchor="middle">advisory</text>
+<text x="1040" y="390" font-size="12.5" font-weight="700" fill="#2A2521" font-family="ui-monospace, Menlo, monospace">secrets-discipline</text>
+<text x="1040" y="410" font-size="11.5" fill="#7A7164">Reference secrets by name; never</text>
+<text x="1040" y="426" font-size="11.5" fill="#7A7164">echo their values.</text>
+<rect x="40" y="490" width="1200" height="30" rx="7" fill="#2A2521"/>
+<circle cx="58" cy="505.0" r="4.5" fill="#FBF9F4"/>
+<text x="74" y="510" font-size="14.5" font-weight="700" fill="#FBF9F4" font-family="ui-monospace, Menlo, monospace">PreToolUse</text>
+<text x="1226" y="510" font-size="12.5" fill="#C9BBA3" text-anchor="end">Edit / Write / MultiEdit</text>
+<rect x="40" y="530" width="232" height="104" rx="9" fill="#FFFFFF" stroke="#E7E0D4" stroke-width="1"/>
+<rect x="40" y="530" width="5" height="104" rx="2.5" fill="#B26A4A"/>
+<rect x="214" y="542" width="46" height="18" rx="9" fill="#9E3B2E"/>
+<text x="237" y="555" font-size="10.5" font-weight="700" fill="#fff" text-anchor="middle">BLOCKS</text>
+<text x="56" y="560" font-size="12.5" font-weight="700" fill="#2A2521" font-family="ui-monospace, Menlo, monospace">change-scope-pre-edit-gate</text>
+<text x="56" y="580" font-size="11.5" fill="#7A7164">Blocks edits to files outside the</text>
+<text x="56" y="596" font-size="11.5" fill="#7A7164">active .planning scope manifest.</text>
+<rect x="286" y="530" width="232" height="104" rx="9" fill="#FFFFFF" stroke="#E7E0D4" stroke-width="1"/>
+<rect x="286" y="530" width="5" height="104" rx="2.5" fill="#4F7A6A"/>
+<rect x="460" y="542" width="46" height="18" rx="9" fill="#9E3B2E"/>
+<text x="483" y="555" font-size="10.5" font-weight="700" fill="#fff" text-anchor="middle">BLOCKS</text>
+<text x="302" y="560" font-size="12.5" font-weight="700" fill="#2A2521" font-family="ui-monospace, Menlo, monospace">plan-complete-flip-guard</text>
+<text x="302" y="580" font-size="11.5" fill="#7A7164">Blocks flipping the final 99.0</text>
+<text x="302" y="596" font-size="11.5" fill="#7A7164">box without explicit human OK.</text>
+<rect x="40" y="660" width="1200" height="30" rx="7" fill="#2A2521"/>
+<circle cx="58" cy="675.0" r="4.5" fill="#FBF9F4"/>
+<text x="74" y="680" font-size="14.5" font-weight="700" fill="#FBF9F4" font-family="ui-monospace, Menlo, monospace">PreToolUse</text>
+<text x="1226" y="680" font-size="12.5" fill="#C9BBA3" text-anchor="end">Bash</text>
+<rect x="40" y="700" width="232" height="104" rx="9" fill="#FFFFFF" stroke="#E7E0D4" stroke-width="1"/>
+<rect x="40" y="700" width="5" height="104" rx="2.5" fill="#B26A4A"/>
+<rect x="202" y="712" width="58" height="18" rx="9" fill="#EFE9DC"/>
+<text x="231" y="725" font-size="10" font-weight="600" fill="#7A7164" text-anchor="middle">advisory</text>
+<text x="56" y="730" font-size="12.5" font-weight="700" fill="#2A2521" font-family="ui-monospace, Menlo, monospace">change-scope-reminder</text>
+<text x="56" y="750" font-size="11.5" fill="#7A7164">Before a commit, audit the diff</text>
+<text x="56" y="766" font-size="11.5" fill="#7A7164">hunk-by-hunk; ship only in-scope</text>
+<text x="56" y="782" font-size="11.5" fill="#7A7164">changes.</text>
+<rect x="286" y="700" width="232" height="104" rx="9" fill="#FFFFFF" stroke="#E7E0D4" stroke-width="1"/>
+<rect x="286" y="700" width="5" height="104" rx="2.5" fill="#A8862E"/>
+<rect x="448" y="712" width="58" height="18" rx="9" fill="#EFE9DC"/>
+<text x="477" y="725" font-size="10" font-weight="600" fill="#7A7164" text-anchor="middle">advisory</text>
+<text x="302" y="730" font-size="12.5" font-weight="700" fill="#2A2521" font-family="ui-monospace, Menlo, monospace">git-mv-unstaged-guard</text>
+<text x="302" y="750" font-size="11.5" fill="#7A7164">Warns that git mv of an</text>
+<text x="302" y="766" font-size="11.5" fill="#7A7164">edited-but-unstaged file silently</text>
+<text x="302" y="782" font-size="11.5" fill="#7A7164">drops the edits.</text>
+<rect x="40" y="830" width="1200" height="30" rx="7" fill="#2A2521"/>
+<circle cx="58" cy="845.0" r="4.5" fill="#FBF9F4"/>
+<text x="74" y="850" font-size="14.5" font-weight="700" fill="#FBF9F4" font-family="ui-monospace, Menlo, monospace">PostToolUse</text>
+<text x="1226" y="850" font-size="12.5" fill="#C9BBA3" text-anchor="end">Edit / Write / MultiEdit</text>
+<rect x="40" y="870" width="232" height="104" rx="9" fill="#FFFFFF" stroke="#E7E0D4" stroke-width="1"/>
+<rect x="40" y="870" width="5" height="104" rx="2.5" fill="#4F7A6A"/>
+<rect x="202" y="882" width="58" height="18" rx="9" fill="#EFE9DC"/>
+<text x="231" y="895" font-size="10" font-weight="600" fill="#7A7164" text-anchor="middle">advisory</text>
+<text x="56" y="900" font-size="12.5" font-weight="700" fill="#2A2521" font-family="ui-monospace, Menlo, monospace">plan-completion-detector</text>
+<text x="56" y="920" font-size="11.5" fill="#7A7164">Detects the 99.0 flip and prompts</text>
+<text x="56" y="936" font-size="11.5" fill="#7A7164">archival of the finished plan.</text>
+<rect x="286" y="870" width="232" height="104" rx="9" fill="#FFFFFF" stroke="#E7E0D4" stroke-width="1"/>
+<rect x="286" y="870" width="5" height="104" rx="2.5" fill="#4F7A6A"/>
+<rect x="448" y="882" width="58" height="18" rx="9" fill="#EFE9DC"/>
+<text x="477" y="895" font-size="10" font-weight="600" fill="#7A7164" text-anchor="middle">advisory</text>
+<text x="302" y="900" font-size="12.5" font-weight="700" fill="#2A2521" font-family="ui-monospace, Menlo, monospace">plan-folder-discipline</text>
+<text x="302" y="920" font-size="11.5" fill="#7A7164">Keeps the 2-tier resume routing</text>
+<text x="302" y="936" font-size="11.5" fill="#7A7164">(global vs per-plan) correct.</text>
+<rect x="40" y="1000" width="1200" height="30" rx="7" fill="#2A2521"/>
+<circle cx="58" cy="1015.0" r="4.5" fill="#FBF9F4"/>
+<text x="74" y="1020" font-size="14.5" font-weight="700" fill="#FBF9F4" font-family="ui-monospace, Menlo, monospace">Stop</text>
+<text x="1226" y="1020" font-size="12.5" fill="#C9BBA3" text-anchor="end">turn ends</text>
+<rect x="40" y="1040" width="232" height="104" rx="9" fill="#FFFFFF" stroke="#E7E0D4" stroke-width="1"/>
+<rect x="40" y="1040" width="5" height="104" rx="2.5" fill="#4F7A6A"/>
+<rect x="214" y="1052" width="46" height="18" rx="9" fill="#9E3B2E"/>
+<text x="237" y="1065" font-size="10.5" font-weight="700" fill="#fff" text-anchor="middle">BLOCKS</text>
+<text x="56" y="1070" font-size="12.5" font-weight="700" fill="#2A2521" font-family="ui-monospace, Menlo, monospace">completion-claim-guard</text>
+<text x="56" y="1090" font-size="11.5" fill="#7A7164">Blocks a “done” claim while the</text>
+<text x="56" y="1106" font-size="11.5" fill="#7A7164">plan still has open N.M boxes.</text>
+<rect x="40" y="1176" width="1200" height="150" rx="11" fill="#F4EFE6" stroke="#E7E0D4"/>
+<text x="62" y="1206" font-size="13" letter-spacing="2" font-weight="700" fill="#7A7164">THE <tspan font-family="ui-monospace, Menlo, monospace" fill="#2A2521">.planning/</tspan> WORKFLOW THE HOOKS ORBIT</text>
+<rect x="64" y="1224" width="250" height="24" rx="6" fill="#fff" stroke="#E7E0D4"/>
+<rect x="64" y="1224" width="4" height="24" rx="2" fill="#4F7A6A"/>
+<text x="78" y="1240" font-size="11.5" font-weight="700" fill="#2A2521" font-family="ui-monospace, Menlo, monospace">plan.md</text>
+<text x="214" y="1240" font-size="10.5" fill="#7A7164">- [ ] **N.M** steps</text>
+<rect x="64" y="1254" width="250" height="24" rx="6" fill="#fff" stroke="#E7E0D4"/>
+<rect x="64" y="1254" width="4" height="24" rx="2" fill="#B26A4A"/>
+<text x="78" y="1270" font-size="11.5" font-weight="700" fill="#2A2521" font-family="ui-monospace, Menlo, monospace">scope.md</text>
+<text x="214" y="1270" font-size="10.5" fill="#7A7164">files allowed to change</text>
+<rect x="64" y="1284" width="250" height="24" rx="6" fill="#fff" stroke="#E7E0D4"/>
+<rect x="64" y="1284" width="4" height="24" rx="2" fill="#A8862E"/>
+<text x="78" y="1300" font-size="11.5" font-weight="700" fill="#2A2521" font-family="ui-monospace, Menlo, monospace">resume-next-session.md</text>
+<text x="214" y="1300" font-size="10.5" fill="#7A7164">handoff for next time</text>
+<line x1="320" y1="1257.0" x2="364" y2="1257.0" stroke="#BBB0A0" stroke-width="2"/>
+<path d="M364,1252.0 L372,1257.0 L364,1262.0 Z" fill="#BBB0A0"/>
+<rect x="372" y="1231.0" width="150" height="52" rx="8" fill="#fff" stroke="#E7E0D4"/>
+<text x="447" y="1251.0" font-size="11.5" font-weight="700" fill="#2A2521" text-anchor="middle">do the work</text>
+<text x="447" y="1269.0" font-size="10.5" fill="#7A7164" text-anchor="middle">tick [x] each box</text>
+<line x1="528" y1="1257.0" x2="572" y2="1257.0" stroke="#BBB0A0" stroke-width="2"/>
+<path d="M572,1252.0 L580,1257.0 L572,1262.0 Z" fill="#BBB0A0"/>
+<rect x="580" y="1231.0" width="168" height="52" rx="8" fill="#2A2521"/>
+<text x="664" y="1251.0" font-size="11.5" font-weight="700" fill="#fff" text-anchor="middle" font-family="ui-monospace, Menlo, monospace">**99.0** COMPLETE</text>
+<text x="664" y="1269.0" font-size="10" fill="#C9BBA3" text-anchor="middle">human flips it — never the agent</text>
+<line x1="754" y1="1257.0" x2="798" y2="1257.0" stroke="#BBB0A0" stroke-width="2"/>
+<path d="M798,1252.0 L806,1257.0 L798,1262.0 Z" fill="#BBB0A0"/>
+<rect x="806" y="1231.0" width="120" height="52" rx="8" fill="#fff" stroke="#E7E0D4"/>
+<text x="866" y="1251.0" font-size="11.5" font-weight="700" fill="#2A2521" text-anchor="middle" font-family="ui-monospace, Menlo, monospace">archive/</text>
+<text x="866" y="1269.0" font-size="10.5" fill="#7A7164" text-anchor="middle">auto-detected</text>
+<rect x="40" y="1344" width="46" height="18" rx="9" fill="#9E3B2E"/>
+<text x="63" y="1357" font-size="10.5" font-weight="700" fill="#fff" text-anchor="middle">BLOCKS</text>
+<text x="96" y="1357" font-size="12.5" fill="#7A7164">stops the action until you fix it (a guard)</text>
+<rect x="370" y="1344" width="58" height="18" rx="9" fill="#EFE9DC"/>
+<text x="399" y="1357" font-size="10" font-weight="600" fill="#7A7164" text-anchor="middle">advisory</text>
+<text x="436" y="1357" font-size="12.5" fill="#7A7164">injects a reminder, never blocks</text>
+<text x="1240" y="1357" font-size="12.5" fill="#2A2521" text-anchor="end" font-family="ui-monospace, Menlo, monospace">/plugin install planning-harness@planning-harness</text>
+</svg>
