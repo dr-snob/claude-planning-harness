@@ -4,9 +4,10 @@
   <img src="docs/architecture.svg" alt="planning-harness architecture — how the 13 hooks wire into the Claude Code session lifecycle and the .planning/ workflow" width="100%">
 </p>
 
-> **At a glance:** every hook hangs off a Claude Code session event (above). Some are
-> *advisory* (they inject a reminder); two are *guards* that **block** the action until
-> you fix it. They all orbit the `.planning/` workflow shown at the bottom.
+> **Follow the arrows:** each story starts from *what you type or do*, flows through the
+> hook it fires, and shows what it reads/writes or where it **blocks** you. Story 1 is the
+> loop that matters most — saying *“wrap up”* writes a handoff file that the next session
+> reads back, so you never re-explain. Gold = a trigger, red octagon = a hard block.
 
 A Claude Code plugin that adds a persistent **`.planning/` workflow**, a
 **change-scope discipline**, and a set of **session-continuity and efficiency

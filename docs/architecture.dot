@@ -1,0 +1,150 @@
+digraph planning_harness {
+  rankdir=TB;
+  bgcolor="#FBF9F4";
+  fontname="Helvetica";
+  splines=true;
+  nodesep=0.30;
+  ranksep=0.55;
+  pad=0.35;
+  newrank=true;
+  node [fontname="Helvetica", fontsize=11, margin="0.14,0.08", penwidth=1.6];
+  edge [fontname="Helvetica", fontsize=9, color="#9A9182", fontcolor="#5F574B", arrowsize=0.75, penwidth=1.3];
+
+  // ---------- shared styles via node attrs ----------
+  // trigger = what you type/do (gold), hook (bundle-colored border), state = .planning file (sage note),
+  // block = red octagon, outcome = muted pill.
+
+  /* =========================================================
+     STORY 1 — SESSION CONTINUITY  (the loop)
+     ========================================================= */
+  subgraph cluster_cont {
+    label=<<b>1 · SESSION CONTINUITY</b>  <font color="#6B6358">— your context survives across sessions</font>>;
+    labeljust="l"; fontsize=13; fontcolor="#4F7A6A"; color="#CBB89E"; style="rounded"; bgcolor="#F6F2EA"; margin=14;
+
+    t_wrap  [shape=box, style="rounded,filled", fillcolor="#EFDFAE", color="#A8862E",
+             label=<&#9000; you type<br/><b>“wrap up”</b>>];
+    h_hand  [shape=box, style="rounded,filled", fillcolor="white", color="#4F7A6A",
+             label=<<b>end-session-handoff</b>>];
+    s_res   [shape=note, style="filled", fillcolor="#E6EFE9", color="#4F7A6A",
+             label=<<b>.planning/</b><br/>resume-next-session.md>];
+    t_new   [shape=box, style="rounded,filled", fillcolor="#EFDFAE", color="#A8862E",
+             label=<&#9654; a new session<br/>begins>];
+    h_load  [shape=box, style="rounded,filled", fillcolor="white", color="#4F7A6A",
+             label=<<b>auto-load-resume-notes</b>>];
+    o_ctx   [shape=box, style="rounded,filled", fillcolor="#EDE7DA", color="#CBB89E",
+             label=<next session resumes with<br/><b>full context</b> — no re-explaining>];
+
+    t_wrap -> h_hand [label="triggers"];
+    h_hand -> s_res  [label="writes the handoff"];
+    t_new  -> h_load [label="on SessionStart"];
+    s_res  -> h_load [label="reads it back", color="#4F7A6A", fontcolor="#4F7A6A", style=bold];
+    h_load -> o_ctx;
+  }
+
+  /* =========================================================
+     STORY 2 — SCOPE GUARD  (block + fix)
+     ========================================================= */
+  subgraph cluster_scope {
+    label=<<b>2 · CHANGE-SCOPE DISCIPLINE</b>  <font color="#6B6358">— only edit what you declared</font>>;
+    labeljust="l"; fontsize=13; fontcolor="#B26A4A"; color="#CBB89E"; style="rounded"; bgcolor="#F7EFEA"; margin=14;
+
+    t_edit  [shape=box, style="rounded,filled", fillcolor="#EFDFAE", color="#A8862E",
+             label=<&#9998; you edit a<br/>code file>];
+    h_gate  [shape=box, style="rounded,filled", fillcolor="white", color="#B26A4A",
+             label=<<b>change-scope-pre-edit-gate</b>>];
+    s_scope [shape=note, style="filled", fillcolor="#F3E6DE", color="#B26A4A",
+             label=<<b>.planning/</b><br/>scope.md<br/><font point-size="9">files allowed to change</font>>];
+    b_scope [shape=octagon, style="filled", fillcolor="#9E3B2E", fontcolor="white",
+             label=<<b>BLOCKED</b><br/><font point-size="9" color="#F2D9D2">file not in scope</font>>];
+    o_fix   [shape=box, style="rounded,filled", fillcolor="#EDE7DA", color="#CBB89E",
+             label=<add it to scope.md<br/>(or revert) &#8594; edit proceeds>];
+
+    t_commit[shape=box, style="rounded,filled", fillcolor="#EFDFAE", color="#A8862E",
+             label=<&#9000; <b>git commit</b>>];
+    h_csr   [shape=box, style="rounded,filled", fillcolor="white", color="#B26A4A",
+             label=<<b>change-scope-reminder</b>>];
+    o_audit [shape=box, style="rounded,filled", fillcolor="#EDE7DA", color="#CBB89E",
+             label=<audit the diff hunk-by-hunk,<br/>drop unrelated drift>];
+
+    t_edit  -> h_gate  [label="intercepts"];
+    h_gate  -> s_scope [label="checks", style=dashed];
+    h_gate  -> b_scope [label="if outside scope", color="#9E3B2E", fontcolor="#9E3B2E"];
+    b_scope -> o_fix;
+    o_fix   -> s_scope [label="you declare it", style=dashed, constraint=false];
+    t_commit-> h_csr   [label="triggers"];
+    h_csr   -> o_audit;
+  }
+
+  /* =========================================================
+     STORY 3 — PLAN → COMPLETION → ARCHIVE
+     ========================================================= */
+  subgraph cluster_plan {
+    label=<<b>3 · PLAN TRACKING &amp; COMPLETION</b>  <font color="#6B6358">— “done” must match reality</font>>;
+    labeljust="l"; fontsize=13; fontcolor="#4F7A6A"; color="#CBB89E"; style="rounded"; bgcolor="#F6F2EA"; margin=14;
+
+    s_plan  [shape=note, style="filled", fillcolor="#E6EFE9", color="#4F7A6A",
+             label=<<b>.planning/</b> plan.md<br/><font point-size="9">- [ ] <b>N.M</b> steps&#160;&#160;- [ ] <b>99.0</b></font>>];
+    t_next  [shape=box, style="rounded,filled", fillcolor="#EFDFAE", color="#A8862E",
+             label=<&#9000; you type<br/><b>“next phase”</b>>];
+    h_phase [shape=box, style="rounded,filled", fillcolor="white", color="#4F7A6A",
+             label=<<b>phase-transition-reminder</b>>];
+    t_done  [shape=box, style="rounded,filled", fillcolor="#EFDFAE", color="#A8862E",
+             label=<&#9000; you say<br/><b>“it's done”</b>>];
+    h_claim [shape=box, style="rounded,filled", fillcolor="white", color="#4F7A6A",
+             label=<<b>completion-claim-guard</b>>];
+    b_done  [shape=octagon, style="filled", fillcolor="#9E3B2E", fontcolor="white",
+             label=<<b>BLOCKED</b><br/><font point-size="9" color="#F2D9D2">boxes still open</font>>];
+    t_99    [shape=box, style="rounded,filled", fillcolor="#EFDFAE", color="#A8862E",
+             label=<&#9998; flip the final<br/><b>99.0</b> box>];
+    h_flip  [shape=box, style="rounded,filled", fillcolor="white", color="#4F7A6A",
+             label=<<b>plan-complete-flip-guard</b>>];
+    b_99    [shape=octagon, style="filled", fillcolor="#9E3B2E", fontcolor="white",
+             label=<<b>BLOCKED</b><br/><font point-size="9" color="#F2D9D2">human-only gate</font>>];
+    h_det   [shape=box, style="rounded,filled", fillcolor="white", color="#4F7A6A",
+             label=<<b>plan-completion-detector</b>>];
+    s_arch  [shape=note, style="filled", fillcolor="#E6EFE9", color="#4F7A6A",
+             label=<<b>.planning/archive/</b><br/><font point-size="9">finished plan, filed away</font>>];
+
+    t_next  -> h_phase [label="triggers"];
+    h_phase -> s_plan  [label="tick finished boxes"];
+    t_done  -> h_claim [label="intercepts"];
+    h_claim -> s_plan  [label="checks boxes", style=dashed];
+    h_claim -> b_done  [label="if any open", color="#9E3B2E", fontcolor="#9E3B2E"];
+    t_99    -> h_flip  [label="intercepts"];
+    h_flip  -> b_99    [label="unless you OK it", color="#9E3B2E", fontcolor="#9E3B2E"];
+    h_flip  -> h_det   [label="once authorized"];
+    h_det   -> s_arch  [label="auto-archives"];
+    s_plan  -> s_arch  [style=invis];
+  }
+
+  /* =========================================================
+     STORY 4 — QUICK NUDGES (efficiency / quality)
+     ========================================================= */
+  subgraph cluster_eff {
+    label=<<b>4 · EFFICIENCY &amp; QUALITY NUDGES</b>  <font color="#6B6358">— lightweight, never block</font>>;
+    labeljust="l"; fontsize=13; fontcolor="#A8862E"; color="#CBB89E"; style="rounded"; bgcolor="#F7F1E2"; margin=14;
+
+    e1 [shape=box, style="rounded,filled", fillcolor="#EFDFAE", color="#A8862E", label=<&#9000; a factual claim /<br/>a proposal>];
+    h1 [shape=box, style="rounded,filled", fillcolor="white", color="#A8862E", label=<<b>intellectual-honesty</b>>];
+    a1 [shape=plaintext, label=<<font color="#5F574B">verify before asserting;<br/>push back with reasons</font>>];
+    e2 [shape=box, style="rounded,filled", fillcolor="#EFDFAE", color="#A8862E", label=<&#9000; “I can't view/<br/>read that”>];
+    h2 [shape=box, style="rounded,filled", fillcolor="white", color="#A8862E", label=<<b>tool-acquisition</b>>];
+    a2 [shape=plaintext, label=<<font color="#5F574B">probe &#8594; install &#8594; use</font>>];
+    e3 [shape=box, style="rounded,filled", fillcolor="#EFDFAE", color="#A8862E", label=<&#9998; a secret value<br/>appears>];
+    h3 [shape=box, style="rounded,filled", fillcolor="white", color="#A8862E", label=<<b>secrets-discipline</b>>];
+    a3 [shape=plaintext, label=<<font color="#5F574B">name it, never echo<br/>the value</font>>];
+    e4 [shape=box, style="rounded,filled", fillcolor="#EFDFAE", color="#A8862E", label=<&#9000; <b>git mv</b> an<br/>edited file>];
+    h4 [shape=box, style="rounded,filled", fillcolor="white", color="#A8862E", label=<<b>git-mv-unstaged-guard</b>>];
+    a4 [shape=plaintext, label=<<font color="#5F574B">stages the OLD blob —<br/>re-add after the move</font>>];
+
+    e1 -> h1 -> a1;
+    e2 -> h2 -> a2;
+    e3 -> h3 -> a3;
+    e4 -> h4 -> a4;
+  }
+
+  // stack the four stories vertically (one column) → README-friendly aspect
+  o_ctx   -> t_edit [style=invis];
+  o_audit -> t_done [style=invis];
+  s_arch  -> e1     [style=invis];
+}
